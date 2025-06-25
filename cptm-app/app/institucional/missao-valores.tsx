@@ -9,7 +9,7 @@ export default function MissaoEValoresScreen() {
       <ScrollView contentContainerStyle={styles.content}>
         {/* Image */}
         <Image
-          source={require("../../assets/images/cptm_train.png")}
+          source={require("@/assets/images/cptm_train.png")}
           style={styles.image}
           resizeMode="cover"
         />

@@ -5,6 +5,8 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { router, useRouter } from 'expo-router';
+import { Button } from 'react-native';
 
 export default function HomeScreen() {
   return (
@@ -17,7 +19,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">Welcome!ss</ThemedText>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -37,6 +39,12 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        const router = useRouter();
+
+        <Button
+          title="Go to AuthScreen"
+          onPress={() => router.push({ pathname: '/auth' })}
+        />
         <ThemedText>
           {`Tap the Explore tab to learn more about what's included in this starter app.`}
         </ThemedText>
