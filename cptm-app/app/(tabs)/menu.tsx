@@ -3,6 +3,7 @@ import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { MenuItem } from '../../components/Menu/MenuItem';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome';
+import { routes } from '@/constants/Route';
 
 // ícones
 import Logo from '../../assets/icons/logo.svg';
@@ -19,36 +20,36 @@ export default function Menu() {
         <Text style={styles.title}>O que você procura?</Text>
 
         <Text style={styles.section}>Navegação</Text>
-        <MenuItem label="Linhas e estações" route="/">
+        <MenuItem label="Linhas e estações" route="home">
           <FontAwesome5 name="train" size={24} color="#000" />
         </MenuItem>
-        <MenuItem label="Rotas" route="/">
+        <MenuItem label="Rotas" route="menu">
           <FontAwesome5 name="map" size={24} color="#000" />
         </MenuItem>
 
         <Text style={styles.section}>Serviços</Text>
-        <MenuItem label="Compra de bilhetes" route="/">
+        <MenuItem label="Compra de bilhetes" route="home">
           <FontAwesome5 name="ticket" size={24} color="#000" />
         </MenuItem>
-        <MenuItem label="Acessibilidade" route="/">
+        <MenuItem label="Acessibilidade" route="home">
           <FontAwesome5 name="wheelchair" size={24} color="#000" />
         </MenuItem>
-        <MenuItem label="Emergência" route="/">
+        <MenuItem label="Emergência" route="home">
           <FontAwesome5 name="ambulance" size={24} color="#000" />
         </MenuItem>
-        <MenuItem label="Bicicletário" route="/">
+        <MenuItem label="Bicicletário" route="home">
           <FontAwesome5 name="bicycle" size={24} color="#000" />
         </MenuItem>
 
         <Text style={styles.section}>Institucional</Text>
-        <MenuItem label="Tarifas" route="/" />
-        <MenuItem label="Fale Conosco" route="/" />
-        <MenuItem label="Missão, Visão e Valores" route="/" />
-        <MenuItem label="Termos de Uso" route="/" />
-        <MenuItem label="Regulamento de Viagem" route="/" />
+        <MenuItem label="Tarifas" route="tarifas" />
+        <MenuItem label="Fale Conosco" route="faleConosco" />
+        <MenuItem label="Missão, Visão e Valores" route="home" />
+        <MenuItem label="Termos de Uso" route="termos" />
+        <MenuItem label="Regulamento de Viagem" route="home" />
 
         <Text style={styles.section}>Configurações</Text>
-        <MenuItem label="Perfil" route="/" />
+        <MenuItem label="Perfil" route="home" />
       </ScrollView>
     </SafeAreaView>
   );
