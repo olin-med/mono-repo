@@ -85,13 +85,11 @@ const styles = StyleSheet.create({
     marginLeft: 16,
   },
   label: {
-    color: '#888',
     fontSize: 13,
     fontFamily: 'FrutigerLTStd-Roman',
     marginBottom: 2,
   },
   value: {
-    color: '#222',
     fontSize: 17,
     fontFamily: 'FrutigerLTStd-Bold',
     fontWeight: '500',
