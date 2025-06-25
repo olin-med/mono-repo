@@ -15,6 +15,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { authService } from '../../services/api';
+import { router } from 'expo-router';
 import { RootStackParamList } from '../App';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
@@ -40,7 +41,7 @@ const LoginScreen = () => {
       console.log('Login successful, token stored');
       
       // Navigate to the main app
-      navigation.navigate('AuthScreen');
+      router.push('/login/AuthScreen');
     } catch (error) {
       console.error('Login error:', error);
       Alert.alert(
@@ -86,7 +87,7 @@ const LoginScreen = () => {
         />
 
         <TouchableOpacity 
-          onPress={() => navigation.navigate('RecuperarSenha')}
+          onPress={() => router.push('/login/RecuperarSenha')}
           disabled={loading}
         >
           <Text style={styles.linkText}>Esqueci minha senha</Text>
@@ -107,7 +108,7 @@ const LoginScreen = () => {
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>Não possui cadastro?</Text>
           <TouchableOpacity 
-            onPress={() => navigation.navigate('Cadastro')}
+            onPress={() => router.push('/login/Cadastro')}
             disabled={loading}
           >
             <Text style={styles.footerLink}> Cadastrar</Text>
@@ -117,7 +118,7 @@ const LoginScreen = () => {
 
       <TouchableOpacity
         style={[styles.bottomButton, loading && styles.buttonDisabled]}
-        onPress={() => navigation.navigate('AuthScreen')}
+        onPress={() => router.push('/login/AuthScreen')}
         disabled={loading}
       >
         <Text style={styles.bottomButtonText}>Entrar sem Cadastro</Text>
