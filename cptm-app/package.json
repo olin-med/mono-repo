@@ -1,7 +1,8 @@
 {
   "name": "cptm-app",
-  "main": "expo-router/entry",
   "version": "1.0.0",
+  "main": "expo-router/entry",
+  "private": true,
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
@@ -25,7 +26,7 @@
     "expo-haptics": "~14.1.4",
     "expo-image": "~2.3.0",
     "expo-linking": "~7.1.5",
-    "expo-router": "~5.1.0",
+    "expo-router": "^5.1.0",
     "expo-splash-screen": "~0.30.9",
     "expo-status-bar": "~2.2.3",
     "expo-symbols": "~0.4.5",
@@ -35,13 +36,14 @@
     "react-dom": "19.0.0",
     "react-native": "0.79.4",
     "react-native-dropdown-picker": "^5.4.6",
-    "react-native-gesture-handler": "~2.24.0",
-    "react-native-reanimated": "~3.17.4",
-    "react-native-safe-area-context": "5.4.0",
-    "react-native-screens": "~4.11.1",
+    "react-native-gesture-handler": "^2.26.0",
+    "react-native-reanimated": "^3.17.4",
+    "react-native-safe-area-context": "^5.5.0",
+    "react-native-screens": "^4.11.1",
     "react-native-svg": "15.11.2",
-    "react-native-web": "~0.20.0",
-    "react-native-webview": "13.13.5"
+    "react-native-web": "^0.20.0",
+    "react-native-webview": "13.13.5",
+    "react-native-zoom-toolkit": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -50,6 +52,5 @@
     "eslint-config-expo": "~9.2.0",
     "react-native-svg-transformer": "^1.5.1",
     "typescript": "~5.8.3"
-  },
-  "private": true
+  }
 }
