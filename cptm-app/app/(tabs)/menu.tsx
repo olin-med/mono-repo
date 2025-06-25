@@ -66,7 +66,7 @@ export default function Menu() {
         <MenuItem label="Fale Conosco" route="faleConosco" > 
           <FontAwesome5 name="headset" size={24} style={styles.icon} />
         </MenuItem>
-        <MenuItem label="Missão, Visão e Valores" route="home"> 
+        <MenuItem label="Missão, Visão e Valores" route="missaoValores"> 
           <FontAwesome5 name="tasks" size={24} style={styles.icon} />
         </MenuItem>
         <MenuItem label="Termos de Uso" route="termos">
