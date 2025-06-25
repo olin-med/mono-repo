@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { useRouter } from 'expo-router';
+import { RelativePathString, useRouter } from 'expo-router';
+import { routes } from '@/constants/Route';
 
 // import Arrow from '../../assets/icons/arrow.svg';
 
 interface Props {
   label: string;
-  route: string;
+  route: keyof typeof routes;
   children?: React.ReactNode;
 }
 
@@ -14,7 +15,7 @@ export const MenuItem = ({ label, route, children }: Props) => {
   const router = useRouter();
 
   return (
-    <Pressable onPress={() => router.push(route as any)}>
+    <Pressable onPress={() => router.push(routes[route])}>
       <View style={styles.item}>
         {children}
         <Text style={styles.label}>{label}</Text>
