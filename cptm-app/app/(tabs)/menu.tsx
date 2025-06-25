@@ -1,67 +1,55 @@
 // app/index.tsx
 import React from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View, Pressable } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { MenuItem } from '../../components/Menu/MenuItem';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome';
 
-// íco@/s…
-import TicketIcon         from './assets/icons/1.svg';
-import RouteIcon          from './assets/icons/2.svg';
-import AlarmIcon          from './assets/icons/3.svg';
-import BikeIcon           from './assets/icons/4.svg';
-import MoneyIcon          from './assets/icons/5.svg';
-import HeadPhoneIcon      from './assets/icons/6.svg';
-import HandicapIcon       from './assets/icons/7.svg';
-import TrainIcon          from './assets/icons/8.svg';
-import ShieldIcon         from './assets/icons/9.svg';
-import CheckIcon          from './assets/icons/10.svg';
-import BookIcon           from './assets/icons/11.svg';
-import ProfileIcon        from './assets/icons/12.svg';
-import Menu1              from './assets/icons/menu1.svg';
-import Menu2              from './assets/icons/menu2.svg';
-import Menu3              from './assets/icons/menu3.svg';
-import Menu4              from './assets/icons/menu4.svg';
-import Logo               from './assets/icons/logo.svg';
-import { useRouter }      from 'expo-router';
+// ícones
+import Logo from '../../assets/icons/logo.svg';
 
-export default function Home() {
-  const router = useRouter();
+export default function Menu() {
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Logo width={48} height={48} />
+       {/* <Logo /> */}
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}>O que você procura?</Text>
 
         <Text style={styles.section}>Navegação</Text>
-        <MenuItem icon={TrainIcon}  label="Linhas e estações"         route="/" />
-        <MenuItem icon={RouteIcon}  label="Rotas"                     route="/" />
+        <MenuItem label="Linhas e estações" route="/">
+          <FontAwesome5 name="train" size={24} color="#000" />
+        </MenuItem>
+        <MenuItem label="Rotas" route="/">
+          <FontAwesome5 name="map" size={24} color="#000" />
+        </MenuItem>
 
         <Text style={styles.section}>Serviços</Text>
-        <MenuItem icon={TicketIcon}    label="Compra de bilhetes"     route="/" />
-        <MenuItem icon={HandicapIcon}  label="Acessibilidade"         route="/" />
-        <MenuItem icon={AlarmIcon}     label="Emergência"             route="/" />
-        <MenuItem icon={BikeIcon}      label="Bicicletário"           route="/" />
+        <MenuItem label="Compra de bilhetes" route="/">
+          <FontAwesome5 name="ticket" size={24} color="#000" />
+        </MenuItem>
+        <MenuItem label="Acessibilidade" route="/">
+          <FontAwesome5 name="wheelchair" size={24} color="#000" />
+        </MenuItem>
+        <MenuItem label="Emergência" route="/">
+          <FontAwesome5 name="ambulance" size={24} color="#000" />
+        </MenuItem>
+        <MenuItem label="Bicicletário" route="/">
+          <FontAwesome5 name="bicycle" size={24} color="#000" />
+        </MenuItem>
 
         <Text style={styles.section}>Institucional</Text>
-        <MenuItem icon={MoneyIcon}     label="Tarifas"                route="/" />
-        <MenuItem icon={HeadPhoneIcon} label="Fale Conosco"           route="/" />
-        <MenuItem icon={CheckIcon}     label="Missão, Visão e Valores" route="/" />
-        <MenuItem icon={ShieldIcon}    label="Termos de Uso"          route="/" />
-        <MenuItem icon={BookIcon}      label="Regulamento de Viagem"  route="/" />
+        <MenuItem label="Tarifas" route="/" />
+        <MenuItem label="Fale Conosco" route="/" />
+        <MenuItem label="Missão, Visão e Valores" route="/" />
+        <MenuItem label="Termos de Uso" route="/" />
+        <MenuItem label="Regulamento de Viagem" route="/" />
 
         <Text style={styles.section}>Configurações</Text>
-        <MenuItem icon={ProfileIcon}   label="Perfil"                 route="/" />
+        <MenuItem label="Perfil" route="/" />
       </ScrollView>
-
-      <View style={styles.footer}>
-        <Pressable onPress={() => router.push("/")}   ><Menu1 width={37} height={50} /></Pressable>
-        <Pressable onPress={() => router.push("/")} ><Menu4 width={40} height={50} /></Pressable>
-        <Pressable onPress={() => router.push("/")}  ><Menu2 width={35} height={50} /></Pressable>
-        <Pressable onPress={() => router.push("/")}    ><Menu3 width={37} height={50} /></Pressable>
-      </View>
     </SafeAreaView>
   );
 }
