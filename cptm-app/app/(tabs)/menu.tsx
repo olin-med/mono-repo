@@ -7,9 +7,14 @@ import { routes } from '@/constants/Route';
 
 // ícones
 import Logo from '../../assets/icons/logo.svg';
+import { useColorScheme } from '@/hooks/useColorScheme';
+import { Colors } from '@/constants/Colors';
 
 export default function Menu() {
 
+  const colorScheme = useColorScheme();
+  const themeColors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
+  console.log(themeColors.icon)
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -21,24 +26,24 @@ export default function Menu() {
 
         <Text style={styles.section}>Navegação</Text>
         <MenuItem label="Linhas e estações" route="home">
-          <FontAwesome5 name="train" size={24} color="#000" />
+          <FontAwesome5 name="train" size={24} color={themeColors.icon} />
         </MenuItem>
         <MenuItem label="Rotas" route="menu">
-          <FontAwesome5 name="map" size={24} color="#000" />
+          <FontAwesome5 name="map" size={24} color={themeColors.icon} />
         </MenuItem>
 
         <Text style={styles.section}>Serviços</Text>
         <MenuItem label="Compra de bilhetes" route="home">
-          <FontAwesome5 name="ticket" size={24} color="#000" />
+          <FontAwesome5 name="ticket" size={24} color={themeColors.icon} />
         </MenuItem>
         <MenuItem label="Acessibilidade" route="home">
-          <FontAwesome5 name="wheelchair" size={24} color="#000" />
+          <FontAwesome5 name="wheelchair" size={24} color={themeColors.icon} />
         </MenuItem>
         <MenuItem label="Emergência" route="home">
-          <FontAwesome5 name="ambulance" size={24} color="#000" />
+          <FontAwesome5 name="ambulance" size={24} color={themeColors.icon} />
         </MenuItem>
         <MenuItem label="Bicicletário" route="home">
-          <FontAwesome5 name="bicycle" size={24} color="#000" />
+          <FontAwesome5 name="bicycle" size={24} color={themeColors.icon} />
         </MenuItem>
 
         <Text style={styles.section}>Institucional</Text>
@@ -59,6 +64,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#f5f5f5' },
   header:    { backgroundColor: '#E2001A', alignItems: 'center', padding: 8 },
   content:   { paddingHorizontal: 32, paddingVertical: 16 },
+  icon: {marginHorizontal: 8, color: '#E2001A'},
   title:     { fontSize: 20, fontWeight: '500', marginVertical: 16, textAlign: 'center' },
   section:   { fontSize: 20, fontWeight: '500', color: '#555', marginTop: 24, marginBottom: 12 },
   footer: {
