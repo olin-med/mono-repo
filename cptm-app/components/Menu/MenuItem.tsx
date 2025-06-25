@@ -1,26 +1,24 @@
-// src/components/MenuItem.tsx
 import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { SvgProps } from 'react-native-svg';
 import { useRouter } from 'expo-router';
 
-import Arrow from '../../assets/icons/arrow.svg';
+// import Arrow from '../../assets/icons/arrow.svg';
 
 interface Props {
-  icon: React.FC<SvgProps>;
   label: string;
   route: string;
+  children?: React.ReactNode;
 }
 
-export const MenuItem = ({ icon: Icon, label, route }: Props) => {
+export const MenuItem = ({ label, route, children }: Props) => {
   const router = useRouter();
 
   return (
     <Pressable onPress={() => router.push(route as any)}>
       <View style={styles.item}>
-        <Icon width={24} height={24} style={styles.icon} />
+        {children}
         <Text style={styles.label}>{label}</Text>
-        <Arrow width={24} height={24} />
+        {/* <Arrow width={24} height={24} /> */}
       </View>
     </Pressable>
   );
