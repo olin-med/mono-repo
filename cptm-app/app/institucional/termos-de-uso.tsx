@@ -5,8 +5,8 @@ import { useFonts } from "expo-font";
 
 export default function TermsOfUseScreen() {
   const [fontsLoaded] = useFonts({
-    "Frutiger-Bold": require("../../assets/fonts/FrutigerLTStd-Bold.otf"),
-    "Frutiger-Roman": require("../../assets/fonts/FrutigerLTStd-Roman.otf"),
+    "Frutiger-Bold": require("@/assets/fonts/FrutigerLTStd-Bold.otf"),
+    "Frutiger-Roman": require("@/assets/fonts/FrutigerLTStd-Roman.otf"),
   });
 
   if (!fontsLoaded) {

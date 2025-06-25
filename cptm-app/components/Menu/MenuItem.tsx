@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { RelativePathString, useRouter } from 'expo-router';
 import { routes } from '@/constants/Route';
 
-// import Arrow from '../../assets/icons/arrow.svg';
+// import Arrow from '@/assets/images/icons/arrow.svg';
 
 interface Props {
   label: string;
