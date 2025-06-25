@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build:
+      context: .               # ← ponto indica a pasta atual: cptm-app
+      dockerfile: Dockerfile
+    container_name: cptm-frontend
+    restart: unless-stopped
+    ports:
+      - 8023:19000
+      - 8024:19001
+      - 8025:19002
+      - 8026:8026
+    volumes:
+      - .:/app                # ← monta toda a pasta atual em /app
+      - /app/node_modules     # ← evita sobrescrever node_modules da imagem
+    environment:
+      EXPO_DEVTOOLS_LISTEN_ADDRESS: 0.0.0.0
+    stdin_open: true
+    tty: true
