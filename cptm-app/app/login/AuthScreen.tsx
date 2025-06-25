@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
+import { router } from 'expo-router';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'AuthScreen'>;
 
@@ -28,13 +29,14 @@ const AuthScreen: React.FC<Props> = ({ navigation }) => {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => router.push('/Login')}
         >
           <Text style={styles.buttonText}>Entrar com Cadastro</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.button}
+          onPress={() => router.push('/menu')}
         >
           <Text style={styles.buttonText}>Não se Identificar</Text>
         </TouchableOpacity>
