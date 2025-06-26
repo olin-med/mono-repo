@@ -50,14 +50,14 @@ export default function TabLayout() {
         name="map"
         options={{
           title: 'Mapa',
-          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="map-location-dot" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="train" color={color} />,
         }}
       />
       <Tabs.Screen
         name="statusStation" // Alert 
         options={{
           title: 'Status da Estação',
-          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="user" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="map-location-dot" color={color} />,
         }}
       />
       <Tabs.Screen
