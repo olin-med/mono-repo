@@ -5,4 +5,5 @@ export const routes = {
     faleConosco: '/institucional/fale-conosco',
     termos: '/institucional/termos-de-uso',
     missaoValores: '/institucional/missao-valores',
+    perfil: '/login/Perfil',
 } as const;

@@ -23,6 +23,7 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "Menu" }} />
+        <Stack.Screen name="login/Login" options={{ headerShown: false, title: "Autenticação" }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
