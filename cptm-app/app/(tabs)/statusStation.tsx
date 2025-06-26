@@ -1,7 +1,13 @@
-import React from 'react';
-import { ScrollView, View, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import TransportGroup from '@/components/Estacoes/TransportGroup';
+
+import React, { useEffect, useState } from 'react';
+import { View, ScrollView, Text, ActivityIndicator, SafeAreaView, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
+import TransportGroup from '@/components/Estacoes/TransportGroup'; // Usa tu alias o ajusta el path
+
+// ✅ Lee la variable desde extra (definida en app.config.js)
+// const API_URL = Constants.expoConfig?.extra?.transportApiUrl;
+const API_URL = "http://52.2.242.221:8021/api"
+
 
 type Line = {
   id: string;
