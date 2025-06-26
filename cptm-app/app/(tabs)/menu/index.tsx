@@ -1,11 +1,10 @@
 // app/index.tsx
 import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { MenuItem } from '../../components/Menu/MenuItem'
+import { MenuItem } from '../../../components/Menu/MenuItem'
 import { routes } from '@/constants/Route';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 // ícones
-import Logo from '@/assets/images/icons/logo.svg';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Colors } from '@/constants/Colors';
 
