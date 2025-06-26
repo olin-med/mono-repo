@@ -13,56 +13,82 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import Constants from 'expo-constants';
 
-const API_URL = Constants.expoConfig?.extra?.stationsApiUrl;
+const API_URL = 'http://52.2.242.221:8021';
 
 type Estacao = {
   id: number;
   nome: string;
+  linha_id: number;
+  linha: { id: number; nome: string; cor: string };
 };
 
 type LinhaInfo = {
   nome: string;
   cor: string;
   horario: string;
-  estacoes: Estacao[];
+  estacoes: { id: number; nome: string }[];
 };
 
 export default function LinhaDetalhe() {
   const { lineId, color, name } = useLocalSearchParams<{
-    lineId: string;
-    color: string;
-    name: string;
+    lineId?: string;
+    color?: string;
+    name?: string;
   }>();
   const router = useRouter();
 
   const [linha, setLinha] = useState<LinhaInfo | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const url = `${API_URL}/estacoes/linhas/${lineId}`;
+    if (!lineId) return;
+
+    const controller = new AbortController();
+
+    (async () => {
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setLinha({
-          nome: name ?? '',
-          cor: color ?? '#ED1C24',
-          horario: data.horario ?? '04:00 - 00:00',
-          estacoes: data.estacoes,
+        const res = await fetch(`${API_URL}/estacoes`, {
+          signal: controller.signal,
         });
-      } catch (error) {
-        console.error('❌ Erro ao carregar dados da linha:', error);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const json = await res.json(); // { estacoes: [...] }
+        const todas: Estacao[] = json.estacoes ?? [];
+
+        const idNum = Number(lineId);
+        const daLinha = todas.filter((e) => e.linha_id === idNum);
+
+        if (daLinha.length === 0) {
+          throw new Error('Nenhuma estação para essa linha.');
+        }
+
+        // usa o primeiro item como referência de nome/cor se o caller não enviou
+        const ref = daLinha[0].linha;
+
+        setLinha({
+          nome: name ?? ref.nome,
+          cor: color ?? ref.cor ?? '#ED1C24',
+          horario: '04:00 – 00:00', // não vem da API? define fixo aqui
+          estacoes: daLinha.map(({ id, nome }) => ({ id, nome })),
+        });
+      } catch (err: any) {
+        if (err.name !== 'AbortError') {
+          console.error('❌ Erro ao carregar estações:', err);
+        }
       }
-    };
-    fetchData();
-  }, [lineId]);
+    })();
+
+    return () => controller.abort();
+  }, [lineId, color, name]);
 
   if (!linha) {
     return (
       <View style={styles.loadingContainer}>
-        <Text style={styles.loadingText}>Carregando...</Text>
+        <Text style={styles.loadingText}>Carregando…</Text>
       </View>
     );
   }
+
+  /* ---------- render ------------------------------------------------- */
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -72,7 +98,6 @@ export default function LinhaDetalhe() {
         translucent={false}
       />
 
-      {/* Header */}
       <View style={[styles.header, { backgroundColor: linha.cor }]}>
         <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="#fff" />
@@ -80,43 +105,28 @@ export default function LinhaDetalhe() {
         <Text style={styles.headerTitle}>{linha.nome}</Text>
       </View>
 
-      {/* Horário */}
       <View style={styles.scheduleContainer}>
         <Text style={styles.scheduleLabel}>Horário de funcionamento:</Text>
         <Text style={styles.scheduleValue}>{linha.horario}</Text>
       </View>
 
-      {/* Estações */}
       <ScrollView contentContainerStyle={styles.stationScroll}>
         {linha.estacoes.map((estacao, index) => (
           <View key={estacao.id} style={styles.stationRow}>
-            {/* Coluna do círculo + linhas */}
             <View style={styles.iconColumn}>
               {index !== 0 && (
                 <View
-                  style={[
-                    styles.verticalLine,
-                    { backgroundColor: linha.cor },
-                  ]}
+                  style={[styles.verticalLine, { backgroundColor: linha.cor }]}
                 />
               )}
-              <View
-                style={[
-                  styles.circle,
-                  { borderColor: linha.cor },
-                ]}
-              />
+              <View style={[styles.circle, { borderColor: linha.cor }]} />
               {index !== linha.estacoes.length - 1 && (
                 <View
-                  style={[
-                    styles.verticalLine,
-                    { backgroundColor: linha.cor },
-                  ]}
+                  style={[styles.verticalLine, { backgroundColor: linha.cor }]}
                 />
               )}
             </View>
 
-            {/* Nome da estação + chevron */}
             <TouchableOpacity
               style={styles.stationInfo}
               onPress={() =>
@@ -136,20 +146,12 @@ export default function LinhaDetalhe() {
   );
 }
 
+/* ---------- estilos (iguais aos anteriores) ------------------------- */
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  loadingText: {
-    color: '#555',
-    fontSize: 16,
-  },
+  safeArea: { flex: 1, backgroundColor: '#fff' },
+  loadingContainer: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  loadingText: { color: '#555', fontSize: 16 },
+
   header: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -163,35 +165,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: 12,
   },
-  scheduleContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-  },
-  scheduleLabel: {
-    fontSize: 13,
-    color: '#555',
-  },
-  scheduleValue: {
-    fontSize: 13,
-    color: '#555',
-    marginTop: 2,
-  },
-  stationScroll: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-  },
-  stationRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  iconColumn: {
-    width: 24,
-    alignItems: 'center',
-  },
-  verticalLine: {
-    width: 2,
-    flex: 1,
-  },
+
+  scheduleContainer: { paddingHorizontal: 16, paddingVertical: 8 },
+  scheduleLabel: { fontSize: 13, color: '#555' },
+  scheduleValue: { fontSize: 13, color: '#555', marginTop: 2 },
+
+  stationScroll: { paddingHorizontal: 16, paddingVertical: 8 },
+
+  stationRow: { flexDirection: 'row', alignItems: 'center' },
+  iconColumn: { width: 24, alignItems: 'center' },
+  verticalLine: { width: 2, flex: 1 },
   circle: {
     width: 16,
     height: 16,
@@ -210,9 +193,5 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
   },
-  stationName: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#333',
-  },
+  stationName: { fontSize: 14, fontWeight: '600', color: '#333' },
 });
