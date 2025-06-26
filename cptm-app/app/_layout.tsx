@@ -23,19 +23,10 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerTitle: () => (
-                  <Image
-                    source={require('@/assets/images/logo.png')} // use .png ou .jpg aqui
-                    style={{ width: 32, height: 32, resizeMode: 'contain' }}
-                  />
-                ),
-                headerBackVisible: false,
-                headerTitleAlign: 'center',
-                headerStyle: { backgroundColor: '#E2001A' },
-                headerTintColor: 'white',
-                headerTitleStyle: { fontWeight: 'bold', color: '#fff' },
-                contentStyle: { backgroundColor: '#F9F9F9' }, title: "Menu" }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "Autenticação" }} />
         <Stack.Screen name="login/Login" options={{ headerShown: false, title: "Autenticação" }} />
+        <Stack.Screen name="login/Cadstro" options={{ headerShown: false, title: "Autenticação" }} />
+        <Stack.Screen name="login/AuthScreen" options={{ headerShown: false, title: "Autenticação" }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
