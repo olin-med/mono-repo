@@ -29,7 +29,7 @@ const AuthScreen: React.FC<Props> = ({ navigation }) => {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => router.push('/Login')}
+          onPress={() => router.push('/login/Cadastro')}
         >
           <Text style={styles.buttonText}>Entrar com Cadastro</Text>
         </TouchableOpacity>
