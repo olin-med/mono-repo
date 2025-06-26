@@ -1,0 +1,862 @@
+{
+    "Aeroporto - Guarulhos":{
+        "id": [155],
+        "x": 1844,
+        "y": 307
+    },
+    "Guarulhos - CECAP":{
+        "id": [156],
+        "x": 1844,
+        "y": 398
+    },
+    "Engº. Goulart":{
+        "id": [144,157],
+        "x": 1486,
+        "y": 869
+    },
+    "Brás":{
+        "id": [45,181,127,142],
+        "x": 1254,
+        "y": 986
+    },
+    "Água Branca": {
+        "id": [184],
+        "x": 824,
+        "y": 897
+    },
+    "Tatuapé":{
+        "id": [48,128,143],
+        "x": 1401,
+        "y": 968
+    },
+    "USP Leste":{
+        "id": [145],
+        "x": 1586,
+        "y": 810
+    },
+    "Comendador Ermelino":{
+        "id": [146],
+        "x": 1634,
+        "y": 810
+    },
+    "São Miguel Paulista":{
+        "id": [147],
+        "x": 1683,
+        "y": 810
+    },
+    "Jardim Helena - Vila Mara":{
+        "id": [148],
+        "x": 1737,
+        "y": 810
+    },
+    "Itaim Paulista":{
+        "id": [149],
+        "x": 1774,
+        "y": 810
+    },
+    "Jardim Romano":{
+        "id": [150],
+        "x": 1823,
+        "y": 810
+    },
+    "Engº. Manoel Feio":{
+        "id": [151],
+        "x": 1878,
+        "y": 810
+    },
+    "Itaquaquecetuba":{
+        "id": [152],
+        "x": 1914,
+        "y": 826
+    },
+    "Aracaré":{
+        "id": [153],
+        "x": 1941,
+        "y": 853
+    },
+    "Calmon Viana":{
+        "id": [136,154],
+        "x": 1986,
+        "y": 881
+    },
+    "Juventus - Mooca":{
+        "id": 180,
+        "x": 1379,
+        "y": 1119
+    },
+    "Ipiranga":{
+        "id": 179,
+        "x": 1432,
+        "y": 1174
+    },
+    "Tamanduateí":{
+        "id": [178,36],
+        "x": 1538,
+        "y": 1292
+    },
+    "São Caetano do Sul - Prefeito Walter Braido": {
+        "id": [177],
+        "x": 1602,
+        "y": 1342
+    },
+    "Utinga":{
+        "id":[176],
+        "x":1646,
+        "y": 1385
+    },
+    "Prefeito Saladino":{
+        "id":[175],
+        "x":1690,
+        "y": 1429
+    },
+    "Pref. Celso Daniel - Santo André":{
+        "id":[174],
+        "x":1745,
+        "y": 1483
+    },
+    "Capuava":{
+        "id":[173],
+        "x":1798,
+        "y": 1538
+    },
+    "Mauá":{
+        "id":[172],
+        "x":1832,
+        "y": 1573
+    },
+    "Guapituba":{
+        "id":[171],
+        "x":1864,
+        "y": 1605
+    },
+    "Ribeirão Pires - Antônio Bespalec":{
+        "id":[170],
+        "x":1900,
+        "y": 1639
+    },
+    "Rio Grande da Serra":{
+        "id":[169],
+        "x":1946,
+        "y": 1686
+    },
+    "Luz":{
+        "id":[9,56,182,126],
+        "x":1095,
+        "y": 895
+    },
+    "Palmeiras - Barra Funda":{
+        "id": [38,85,183],
+        "x":898,
+        "y": 908
+    },
+    "Lapa":{
+        "id":[185, 86],
+        "x":776,
+        "y": 895
+    },
+    "Piqueri":{
+        "id":[186],
+        "x": 664,
+        "y": 796
+    },
+    "Pirituba":{
+        "id":[187],
+        "x": 664,
+        "y": 758
+    },
+    "Vila Clarice":{
+        "id":[188],
+        "x": 664,
+        "y": 721
+    },
+    "Jaraguá":{
+        "id":[189],
+        "x": 664,
+        "y": 683
+    },
+    "Vila Aurora":{
+        "id":[190],
+        "x": 664,
+        "y": 647
+    },
+    "Perus":{
+        "id":[191],
+        "x": 664,
+        "y": 608
+    },
+    "Caieiras":{
+        "id":[192],
+        "x": 664,
+        "y": 571
+    },
+    "Franco da Rocha":{
+        "id":[193],
+        "x": 664,
+        "y": 533
+    },
+    "Baltazar Fidélis":{
+        "id":[194],
+        "x": 664,
+        "y": 496
+    },
+    "Francisco Morato":{
+        "id":[195],
+        "x": 620,
+        "y": 451
+    },
+    "Botujuru":{
+        "id":[196],
+        "x": 582,
+        "y": 413
+    },
+    "Campo Limpo Paulista":{
+        "id":[197],
+        "x": 544,
+        "y": 369
+    },
+    "Várzea Paulista":{
+        "id":[198],
+        "x": 426,
+        "y": 369
+    },
+    "Jundiaí":{
+        "id":[199],
+        "x": 302,
+        "y": 369
+    },
+    "Tucuruvi":{
+        "id":[1],
+        "x": 1095,
+        "y": 511
+    },
+    "Parada Inglesa":{
+        "id":[2],
+        "x": 1095,
+        "y": 549
+    },
+    "Jardim São Paulo - Ayrton Senna":{
+        "id": [3],
+        "x": 1095,
+        "y": 582
+    },
+    "Santana":{
+        "id": [4],
+        "x": 1095,
+        "y": 618
+    },
+    "Carandiru":{
+        "id": [5],
+        "x": 1095,
+        "y": 653
+    },
+    "Portuguesa - Tietê":{
+        "id": [6],
+        "x": 1095,
+        "y": 690
+    },
+    "Armênia":{
+        "id": [7],
+        "x": 1095,
+        "y": 727
+    },
+    "Tiradentes":{
+        "id": [8],
+        "x": 1095,
+        "y": 763
+    },
+    "São Bento":{
+        "id": [10],
+        "x": 1095,
+        "y": 1005
+    },
+    "Sé":{
+        "id": [11,43],
+        "x": 1095,
+        "y": 1057
+    },
+    "Liberdade":{
+        "id": [12],
+        "x": 1095,
+        "y": 1156
+    },
+    "São Joaquim":{
+        "id": [13],
+        "x": 1095,
+        "y": 1239
+    },
+    "Vergueiro":{
+        "id": [14],
+        "x": 1095,
+        "y": 1317
+    },
+    "Paraíso":{
+        "id": [15,30],
+        "x": 1082,
+        "y": 1398
+    },
+    "Ana Rosa":{
+        "id": [16,31],
+        "x": 1082,
+        "y": 1447
+    },
+    "Vila Mariana":{
+        "id": [17],
+        "x": 1095,
+        "y": 1501
+    },
+    "Santa Cruz":{
+        "id": [82,18],
+        "x": 1108,
+        "y": 1555
+    },
+    "Praça da Árvore":{
+        "id": [19],
+        "x": 1095,
+        "y": 1593
+    },
+    "Saúde":{
+        "id": [20],
+        "x": 1095,
+        "y": 1593
+    },
+    "São Judas":{
+        "id": [21],
+        "x": 1095,
+        "y": 1669
+    },
+    "Conceição":{
+        "id": [22],
+        "x": 1095,
+        "y": 1706
+    },
+    "Jabaquara":{
+        "id": [23],
+        "x": 1095,
+        "y": 1750
+    },
+    "Vila Madalena":{
+        "id": [24],
+        "x": 745,
+        "y": 1070
+    },
+    "Sumaré":{
+        "id": [25],
+        "x": 782,
+        "y": 1107
+    },
+    "Clínicas":{
+        "id": [26],
+        "x": 818,
+        "y": 1143
+    },
+    "Paulista":{
+        "id": [59],
+        "x": 854,
+        "y": 1201
+    },
+    "Consolação":{
+        "id": [27],
+        "x": 854,
+        "y": 1201
+    },
+    "Trianon - Masp":{
+        "id": [28],
+        "x": 961,
+        "y": 1286
+    },
+    "Brigadeiro":{
+        "id": [29],
+        "x": 1015,
+        "y": 1339
+    },
+    "Chácara Klabin":{
+        "id": [32,83],
+        "x": 1192,
+        "y": 1486
+    },
+    "Alto do Ipiranga":{
+        "id": [34],
+        "x": 1386,
+        "y": 1424
+    },
+    "Sacomã":{
+        "id": [35],
+        "x": 1460,
+        "y": 1355
+    },
+    "Vila Prudente":{
+        "id": [37,158],
+        "x": 1564,
+        "y": 1230
+    },
+    "Marechal Deodoro":{
+        "id": [39],
+        "x": 932,
+        "y": 974
+    },
+    "Santa Cecília":{
+        "id": [40],
+        "x": 952,
+        "y": 998
+    },
+    "República":{
+        "id": [41,57],
+        "x": 983,
+        "y": 1041
+    },
+    "Anhangabaú":{
+        "id": [42],
+        "x": 1046,
+        "y": 1046
+    },
+    "Pedro II":{
+        "id": [44],
+        "x": 1175,
+        "y": 1058
+    },
+    "Bresser - Mooca":{
+        "id": [46],
+        "x": 1321,
+        "y": 996
+    },
+    "Belém":{
+        "id": [47],
+        "x": 1358,
+        "y": 996
+    },
+    "Carrão":{
+        "id": [49],
+        "x": 1453,
+        "y": 996
+    },
+    "Penha":{
+        "id": [50],
+        "x": 1500,
+        "y": 996
+    },
+    "Vila Matilde":{
+        "id": [51],
+        "x": 1547,
+        "y": 996
+    },
+    "Guilhermina - Esperança":{
+        "id": [52],
+        "x": 1596,
+        "y": 996
+    },
+    "Patriarca":{
+        "id": [53],
+        "x": 1642,
+        "y": 996
+    },
+    "Artur Alvim":{
+        "id": [54],
+        "x": 1689,
+        "y": 996
+    },
+    "Corinthians - Itaquera":{
+        "id": [55,129],
+        "x": 1729,
+        "y": 983
+    },
+    "Vila Sônia":{
+        "id": [66],
+        "x": 276,
+        "y": 1235
+    },
+    "São Paulo - Morumbi":{
+        "id": [65],
+        "x": 345,
+        "y": 1235
+    },
+    "Butantã":{
+        "id": [64],
+        "x": 414,
+        "y": 1235
+    },
+    "Pinheiros":{
+        "id": [63,111],
+        "x": 574,
+        "y": 1221
+    },
+    "Faria Lima":{
+        "id": [62],
+        "x": 650,
+        "y": 1235
+    },
+    "Fradique Coutinho":{
+        "id": [61],
+        "x": 721,
+        "y": 1235
+    },
+    "Oscar Freire":{
+        "id": [60],
+        "x": 804,
+        "y": 1235
+    },
+    "Higienópolis-Mackenzie":{
+        "id": [58],
+        "x": 937,
+        "y": 1107
+    },
+    "Capão Redondo":{
+        "id": [67],
+        "x": 268,
+        "y": 1689
+    },
+    "Campo Limpo":{
+        "id": [68],
+        "x": 336,
+        "y": 1689
+    },
+    "Vila das Belezas":{
+        "id": [69],
+        "x": 410,
+        "y": 1689
+    },
+    "Giovanni Gronchi":{
+        "id": [70],
+        "x": 485,
+        "y": 1689
+    },
+    "Santo Amaro":{
+        "id": [71,119],
+        "x": 562,
+        "y": 1689
+    },
+    "Largo Treze":{
+        "id": [72],
+        "x": 614,
+        "y": 1695
+    },
+    "Adolfo Pinheiro":{
+        "id": [73],
+        "x": 663,
+        "y": 1695
+    },
+    "Alto da Boa Vista":{
+        "id": [74],
+        "x": 716,
+        "y": 1689
+    },
+    "Borba Gato":{
+        "id": [75],
+        "x": 762,
+        "y": 1689
+    },
+    "Brooklin":{
+        "id": [76],
+        "x": 813,
+        "y": 1689
+    },
+    "Campo Belo":{
+        "id": [77],
+        "x": 889,
+        "y": 1689
+    },
+    "Eucaliptos":{
+        "id": [78],
+        "x": 922,
+        "y": 1674
+    },
+    "Moema":{
+        "id": [79],
+        "x": 963,
+        "y": 1633
+    },
+    "AACD - Servidor":{
+        "id": [80],
+        "x": 999,
+        "y": 1596
+    },
+    "Hospital São Paulo":{
+        "id": [81],
+        "x": 1039,
+        "y": 1556
+    },
+    "Amador Bueno":{
+        "id": [105],
+        "x": -2,
+        "y": 926
+    },
+    "Santa Rita":{
+        "id": [104],
+        "x": 40,
+        "y": 926
+    },
+    "Itapevi":{
+        "id": [103],
+        "x": 93,
+        "y": 951
+    },
+    "Engº. Cardoso":{
+        "id": [102],
+        "x": 128,
+        "y": 951
+    },
+    "Sagrado Coração":{
+        "id": [101],
+        "x": 160,
+        "y": 951
+    },
+    "Jandira":{
+        "id": [100],
+        "x": 194,
+        "y": 951
+    },
+    "Jardim Silveira":{
+        "id": [99],
+        "x": 225,
+        "y": 951
+    },
+    "Jardim Belval":{
+        "id": [98],
+        "x": 255,
+        "y": 951
+    },
+    "Barueri":{
+        "id": [97],
+        "x": 289,
+        "y": 951
+    },
+    "Antonio João":{
+        "id": [96],
+        "x": 318,
+        "y": 951
+    },
+    "Santa Terezinha":{
+        "id": [95],
+        "x": 350,
+        "y": 951
+    },
+    "Carapicuíba":{
+        "id": [94],
+        "x": 383,
+        "y": 951
+    },
+    "General Miguel Costa":{
+        "id": [93],
+        "x": 415,
+        "y": 951
+    },
+    "Quitaúna":{
+        "id": [92],
+        "x": 445,
+        "y": 951
+    },
+    "Comandante Sampaio":{
+        "id": [91],
+        "x": 477,
+        "y": 951
+    },
+    "Osasco":{
+        "id": [90,106],
+        "x": 510,
+        "y": 951
+    },
+    "Presidente Altino":{
+        "id": [89,107],
+        "x": 553,
+        "y": 951
+    },
+    "Imperatriz Leopoldina":{
+        "id": [88],
+        "x": 696,
+        "y": 918
+    },
+    "Domingo de Moraes":{
+        "id": [87],
+        "x": 753,
+        "y": 918
+    },
+    "Júlio Prestes":{
+        "id": [84],
+        "x": 951,
+        "y": 918
+    },
+    "Ceasa":{
+        "id": [108],
+        "x": 577,
+        "y": 1041
+    },
+    "Villa Lobos - Jaguaré":{
+        "id": [109],
+        "x": 577,
+        "y": 1096
+    },
+    "Cidade Universitária":{
+        "id": [110],
+        "x": 577,
+        "y": 1151
+    },
+    "Hebraica - Rebouças":{
+        "id": [112],
+        "x": 577,
+        "y": 1284
+    },
+    "Cidade Jardim":{
+        "id": [113],
+        "x": 577,
+        "y": 1346
+    },
+    "Vila Olímpia":{
+        "id": [114],
+        "x": 577,
+        "y": 1405
+    },
+    "Berrini":{
+        "id": [115],
+        "x": 577,
+        "y": 1464
+    },
+    "Morumbi":{
+        "id": [116],
+        "x": 577,
+        "y": 1524
+    },
+    "Granja Julieta":{
+        "id": [117],
+        "x": 577,
+        "y": 1578
+    },
+    "João Dias":{
+        "id": [118],
+        "x": 577,
+        "y": 1642
+    },
+    "Socorro":{
+        "id": [120],
+        "x": 577,
+        "y": 1795
+    },
+    "Jurubatuba":{
+        "id": [121],
+        "x": 577,
+        "y": 1828
+    },
+    "Autódromo":{
+        "id": [122],
+        "x": 577,
+        "y": 1860
+    },
+    "Primavera - Interlagos":{
+        "id": [123],
+        "x": 577,
+        "y": 1893
+    },
+    "Grajaú":{
+        "id": [124],
+        "x": 577,
+        "y": 1926
+    },
+    "Bruno Covas/Mendes-Vila Natal":{
+        "id": [125],
+        "x": 577,
+        "y": 1958
+    },
+    "Dom Bosco":{
+        "id": [130],
+        "x": 1786,
+        "y": 973
+    },
+    "José Bonifácio":{
+        "id": [131],
+        "x": 1826,
+        "y": 973
+    },
+    "Guaianases":{
+        "id": [132],
+        "x": 1866,
+        "y": 973
+    },
+    "Antonio Gianetti Neto":{
+        "id": [133],
+        "x": 1899,
+        "y": 973
+    },
+    "Ferraz de Vasconcelos":{
+        "id": [134],
+        "x": 1931,
+        "y": 946
+    },
+    "Poá":{
+        "id": [135],
+        "x": 1956,
+        "y": 920
+    },
+    "Suzano":{
+        "id": [137],
+        "x": 2028,
+        "y": 891
+    },
+    "Jundiapeba":{
+        "id": [138],
+        "x": 2061,
+        "y": 891
+    },
+    "Braz Cubas":{
+        "id": [139],
+        "x": 2095,
+        "y": 891
+    },
+    "Mogi das Cruzes":{
+        "id": [140],
+        "x": 2129,
+        "y": 891
+    },
+    "Estudantes":{
+        "id": [141],
+        "x": 2163,
+        "y": 891
+    },
+    "Oratório":{
+        "id": [159],
+        "x": 1613,
+        "y": 1232
+    },
+    "São Lucas":{
+        "id": [160],
+        "x": 1656,
+        "y": 1232
+    },
+    "Camilo Haddad":{
+        "id": [161],
+        "x": 1700,
+        "y": 1232
+    },
+    "Vila Tolstói":{
+        "id": [162],
+        "x": 1748,
+        "y": 1232
+    },
+    "Vila União":{
+        "id": [163],
+        "x": 1787,
+        "y": 1232
+    },
+    "Jardim Planalto":{
+        "id": [164],
+        "x": 1831,
+        "y": 1232
+    },
+    "Sapopemba":{
+        "id": [165],
+        "x": 1874,
+        "y": 1232
+    },
+    "Fazenda da Juta":{
+        "id": [166],
+        "x": 1919,
+        "y": 1232
+    },
+    "São Mateus":{
+        "id": [167],
+        "x": 1976,
+        "y": 1232
+    },
+    "Jardim Colonial":{
+        "id": [168],
+        "x": 2032,
+        "y": 1232
+    }
+}
