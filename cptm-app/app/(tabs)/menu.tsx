@@ -77,7 +77,7 @@ export default function Menu() {
         </MenuItem>
 
         <Text style={styles.section}>Configurações</Text>
-        <MenuItem label="Perfil" route="home">
+        <MenuItem label="Perfil" route="perfil">
           <FontAwesome5 name="user-alt" size={24} style={styles.icon} />
         </MenuItem>
       </ScrollView>
