@@ -52,6 +52,23 @@ export default function NovoAtendimento() {
           multiline
         />
 
+        <Text style={styles.label}>Data:</Text>
+        <TextInput
+          style={styles.input}
+          value={new Date().toLocaleDateString('pt-BR')}
+          editable={true}
+        />
+
+        <Text style={styles.label}>Horário:</Text>
+        <TextInput
+          style={styles.input}
+          value={new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
+          editable={true}
+          keyboardType="numeric"
+          placeholder="HH:MM"
+        />
+
+
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Enviar</Text>
         </TouchableOpacity>
