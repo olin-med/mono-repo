@@ -206,10 +206,12 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 40,
     flex: 1,
     backgroundColor: '#fff',
   },
   topButtonContainer: {
+    paddingTop: 40,
     width: '100%',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
