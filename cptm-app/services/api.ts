@@ -2,7 +2,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const api = axios.create({
-  baseURL: 'http://10.254.19.32:8031/api/v1',
+  baseURL: 'http://52.2.242.221:8032/api/v1',
 });
 
 export interface LoginCredentials {
@@ -146,10 +146,12 @@ export const authService = {
   },
 
   requestPasswordRecovery: async (data: PasswordRecoveryRequest): Promise<void> => {
+    console.log('Requesting password recovery with data:', data);
     await api.post('/password-reset/password-recovery/', data);
   },
 
   resetPassword: async (data: PasswordResetRequest): Promise<void> => {
+    console.log('Resetting password with data:', data);
     await api.post('/password-reset/reset-password/', data);
   },
 
