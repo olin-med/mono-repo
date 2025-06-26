@@ -95,6 +95,14 @@ export default function TabLayout() {
           href: null,
         }}
       />  
+       <Tabs.Screen
+        name="Estacoes"
+        options={{
+          title: 'Estacoes',
+          href:null,
+          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="bars" color={color} />,
+        }}
+      />
     </Tabs>
   );
 }

@@ -7,6 +7,7 @@ import { SubmitButton } from '@/components/Ocorrencia/submitButton';
 import { PopupSuccess } from '@/components/Ocorrencia/popup';
 import { OcorrenciaFormData } from '@/types/ocorrencia';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { router } from 'expo-router';
 
 export default function sos ()  {
   const [formData, setFormData] = useState<OcorrenciaFormData>({
@@ -24,6 +25,7 @@ export default function sos ()  {
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    router.push({pathname: '/menu'});
   };
 
   const isFormValid = formData.motivo && formData.estacao;
