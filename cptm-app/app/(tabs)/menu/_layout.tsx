@@ -36,10 +36,11 @@ export default function RootLayout() {
         contentStyle: { backgroundColor: '#F9F9F9' },
       }}>
         <Stack.Screen name="faleConosco" options={{ title: "Menu" }} />
-        <Stack.Screen name="missaovalores" options={{ title: "Autenticação" }} />
+        <Stack.Screen name="missaoValores" options={{ title: "Autenticação" }} />
         <Stack.Screen name="tarifas" options={{ title: "Autenticação" }} />
         <Stack.Screen name="termosdeuso" options={{ title: "Autenticação" }} />
         <Stack.Screen name="index" options={{ title: "Menu" }} />
+        <Stack.Screen name="atendimentoPcd" options={{ title: "Acessibilidade" }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
