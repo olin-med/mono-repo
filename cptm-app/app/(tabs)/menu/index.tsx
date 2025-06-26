@@ -58,9 +58,9 @@ export default function Menu() {
         <MenuItem label="Emergência" route="sos">
           <FontAwesome5 name="ambulance" size={24} style={styles.icon} />
         </MenuItem>
-        <MenuItem label="Bicicletário" route="home">
+        {/* <MenuItem label="Bicicletário" route="home">
           <FontAwesome5 name="bicycle" size={24} style={styles.icon} />
-        </MenuItem>
+        </MenuItem> */}
 
         <Text style={styles.section}>Institucional</Text>
         <MenuItem label="Tarifas" route="tarifas" > 
@@ -75,9 +75,9 @@ export default function Menu() {
         <MenuItem label="Termos de Uso" route="termos">
           <FontAwesome5 name="shield-alt" size={24} style={styles.icon} />
         </MenuItem>
-        <MenuItem label="Regulamento de Viagem" route="home">
+        {/* <MenuItem label="Regulamento de Viagem" route="menu">
           <FontAwesome5 name="book" size={24} style={styles.icon} />
-        </MenuItem>
+        </MenuItem> */}
 
         <Text style={styles.section}>Configurações</Text>
         <MenuItem label="Perfil" route="perfil">

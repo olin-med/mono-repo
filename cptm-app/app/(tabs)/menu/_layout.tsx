@@ -39,7 +39,7 @@ export default function RootLayout() {
         <Stack.Screen name="missaoValores" options={{ title: "Autenticação" }} />
         <Stack.Screen name="tarifas" options={{ title: "Autenticação" }} />
         <Stack.Screen name="termosdeuso" options={{ title: "Autenticação" }} />
-        <Stack.Screen name="index" options={{ title: "Menu" }} />
+        <Stack.Screen name="index" options={{ headerShown: false, title: "Menu" }} />
         <Stack.Screen name="atendimentoPcd" options={{ title: "Acessibilidade" }} />
         <Stack.Screen name="+not-found" />
       </Stack>

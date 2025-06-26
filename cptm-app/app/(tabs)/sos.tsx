@@ -80,8 +80,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     backgroundColor: '#FFFFFF',
     paddingHorizontal: 20,
-    paddingTop: 24,
-    paddingBottom: 48,
   },
   title: {
     fontSize: 20,
