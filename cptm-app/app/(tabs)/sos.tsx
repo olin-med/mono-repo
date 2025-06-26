@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput } from 'react-native';
 import { DropdownMotivo } from '@/components/Ocorrencia/dropdownMotivo';
 import { DropdownEstacao } from '@/components/Ocorrencia/dropdownEstacao';
 import { ImagePickerComponent } from '@/components/Ocorrencia/imagePicker';
@@ -29,7 +29,7 @@ export default function sos ()  {
   const isFormValid = formData.motivo && formData.estacao;
 
   return (
-    <SafeAreaView style={{ backgroundColor: "#FFFFFF" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.title}>Registrar Ocorrência</Text>
 
@@ -57,9 +57,7 @@ export default function sos ()  {
         </View>
 
         <View style={styles.divider} />
-
-        <Text style={styles.linhaText}>{formData.linha}</Text>
-
+        
         <SubmitButton
           title="Enviar"
           onPress={handleSubmit}
