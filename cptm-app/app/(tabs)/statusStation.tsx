@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, Text, ActivityIndicator } from 'react-native';
+import { View, ScrollView, Text, ActivityIndicator, SafeAreaView, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 import TransportGroup from '@/components/Estacoes/TransportGroup'; // Usa tu alias o ajusta el path
 
