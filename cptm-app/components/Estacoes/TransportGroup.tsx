@@ -34,7 +34,7 @@ export default function TransportGroup({ group }: GroupProps) {
     }
 
     router.push({
-      pathname: '/estacao',
+      pathname: '/Estacoes/estacoes',
       params: {
         lineId: lineNumber.toString(),
         color: line.color,
