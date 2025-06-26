@@ -71,7 +71,7 @@ const VerificarCodigo: React.FC = () => {
       Alert.alert('Sucesso', 'Senha redefinida com sucesso!', [
         {
           text: 'OK',
-          onPress: () => router.replace('/login'),
+          onPress: () => router.replace('/login/Login'),
         },
       ]);
     } catch (error) {
@@ -147,3 +147,98 @@ const VerificarCodigo: React.FC = () => {
 };
 
 export default VerificarCodigo;
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    backgroundColor: '#D50000',
+    paddingTop: 60,
+    paddingBottom: 30,
+    alignItems: 'center',
+    position: 'relative',
+  },
+  logo: {
+    width: 60,
+    height: 60,
+    resizeMode: 'contain',
+  },
+  wave: {
+    position: 'absolute',
+    bottom: -20,
+    width: '100%',
+    height: 40,
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 100,
+    borderTopRightRadius: 100,
+  },
+  container: {
+    paddingHorizontal: 24,
+    paddingTop: 40,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#333',
+    marginBottom: 12,
+  },
+  description: {
+    fontSize: 14,
+    color: '#333',
+    textAlign: 'center',
+    marginBottom: 20,
+    lineHeight: 20,
+  },
+  email: {
+    fontWeight: 'bold',
+    color: '#D50000',
+  },
+  codeContainer: {
+  flexDirection: 'row',
+  justifyContent: 'center', // optional: 'space-between' or 'space-around'
+  flexWrap: 'wrap',         // just in case
+  gap: 8,                   // modern RN supports it; fallback below if needed
+  marginBottom: 28,
+},
+
+codeInput: {
+  width: 38,                // ✅ narrower width to avoid overflow
+  height: 50,
+  borderWidth: 1,
+  borderColor: '#ccc',
+  borderRadius: 8,
+  backgroundColor: '#F2F2F2',
+  textAlign: 'center',
+  fontSize: 18,
+  marginHorizontal: 4,      // ✅ fallback if `gap` not supported
+},
+  button: {
+    backgroundColor: '#D50000',
+    paddingVertical: 14,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: '600',
+    fontSize: 16,
+  },
+  resendText: {
+    marginTop: 20,
+    textAlign: 'center',
+    fontSize: 13,
+    color: '#333',
+  },
+  boldText: {
+    fontWeight: 'bold',
+  },
+  timerText: {
+    textAlign: 'center',
+    marginTop: 8,
+    color: '#999',
+    fontSize: 12,
+  },
+});
