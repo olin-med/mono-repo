@@ -7,7 +7,7 @@ import { SubmitButton } from '@/components/Ocorrencia/submitButton';
 import { PopupSuccess } from '@/components/Ocorrencia/popup';
 import { OcorrenciaFormData } from '@/types/ocorrencia';
 
-export  function SOS ()  {
+export default function sos ()  {
   const [formData, setFormData] = useState<OcorrenciaFormData>({
     motivo: undefined,
     estacao: undefined,
