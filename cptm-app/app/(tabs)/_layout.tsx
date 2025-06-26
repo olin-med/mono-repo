@@ -67,6 +67,34 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="bell" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="menu/faleConosco" 
+        options={{
+          title: 'Fale Conosco',
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="menu/missaoValores" 
+        options={{
+          href: null,
+          title: 'Sos',
+        }}
+      />
+      <Tabs.Screen
+        name="menu/tarifas" 
+        options={{
+          title: 'Sos',
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="menu/termosdeuso" 
+        options={{
+          title: 'Sos',
+          href: null,
+        }}
+      />  
     </Tabs>
   );
 }
