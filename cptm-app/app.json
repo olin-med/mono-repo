@@ -4,7 +4,7 @@
     "slug": "cptm-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/cptmLogoSmall.png",
     "scheme": "cptmapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
