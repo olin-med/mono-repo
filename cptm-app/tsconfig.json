@@ -3,7 +3,6 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@telas_mapa/*": ["./*"],
       "@/*": [
         "./*"
       ]
