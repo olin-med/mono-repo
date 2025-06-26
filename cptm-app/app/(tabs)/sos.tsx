@@ -7,7 +7,7 @@ import { SubmitButton } from '@/components/Ocorrencia/submitButton';
 import { PopupSuccess } from '@/components/Ocorrencia/popup';
 import { OcorrenciaFormData } from '@/types/ocorrencia';
 
-export const RegistrarOcorrencia: React.FC = () => {
+export  function SOS ()  {
   const [formData, setFormData] = useState<OcorrenciaFormData>({
     motivo: undefined,
     estacao: undefined,
