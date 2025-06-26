@@ -48,11 +48,11 @@ export default function Menu() {
         </MenuItem>
 
         <Text style={styles.section}>Serviços</Text>
-        <MenuItem label="Compra de bilhetes" route="home">
+        <MenuItem label="Compra de bilhetes" route={"https://www.boradetop.com.br/compra-qr-code"}>
           <FontAwesome5 name="ticket-alt" size={24} style={styles.icon} />
         </MenuItem>
         { /* muda o de acessibilidade pra PCD adiciona nas routes tbem*/ }
-        <MenuItem label="Acessibilidade" route="home">
+        <MenuItem label="Acessibilidade" route="pcd">
           <FontAwesome5 name="wheelchair" size={24} style={styles.icon} />
         </MenuItem>
         <MenuItem label="Emergência" route="sos">

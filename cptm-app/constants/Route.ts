@@ -10,4 +10,5 @@ export const routes = {
     search: '/Estacoes/search',
     sos: '/(tabs)/sos',
     map: '/(tabs)/map',
+    pcd: '/(tabs)/menu/atendimentoPcd'
 } as const;
