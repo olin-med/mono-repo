@@ -44,7 +44,7 @@ export default function Menu() {
         <MenuItem label="Estações" route="search">
           <FontAwesome5 name="train" size={24} style={styles.icon} />
         </MenuItem>
-        <MenuItem label="Rotas" route="menu">
+        <MenuItem label="Rotas" route="map">
           <FontAwesome5 name="map" size={24} style={styles.icon} />
         </MenuItem>
 
@@ -52,10 +52,11 @@ export default function Menu() {
         <MenuItem label="Compra de bilhetes" route="home">
           <FontAwesome5 name="ticket-alt" size={24} style={styles.icon} />
         </MenuItem>
+        { /* muda o de acessibilidade pra PCD adiciona nas routes tbem*/ }
         <MenuItem label="Acessibilidade" route="home">
           <FontAwesome5 name="wheelchair" size={24} style={styles.icon} />
         </MenuItem>
-        <MenuItem label="Emergência" route="home">
+        <MenuItem label="Emergência" route="sos">
           <FontAwesome5 name="ambulance" size={24} style={styles.icon} />
         </MenuItem>
         <MenuItem label="Bicicletário" route="home">

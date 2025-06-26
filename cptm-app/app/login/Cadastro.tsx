@@ -16,6 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
 import { authService } from '../../services/api';
+import { router } from 'expo-router';
 
 const Cadastro: React.FC = () => {
   const [nome, setNome] = useState('');
@@ -219,7 +220,7 @@ const Cadastro: React.FC = () => {
 
         <TouchableOpacity 
           style={styles.loginLink} 
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => router.push('/login/Login')}
           disabled={loading}
         >
           <Text>Já possui cadastro? <Text style={styles.loginText}>Entrar</Text></Text>
