@@ -14,8 +14,8 @@ import {
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../App';
-import { authService } from '../../services/api';
+import { router } from 'expo-router';
+import { authService } from '@/services/api';
 
 const Cadastro: React.FC = () => {
   const [nome, setNome] = useState('');
@@ -28,8 +28,6 @@ const Cadastro: React.FC = () => {
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
   const [loading, setLoading] = useState(false);
-
-  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   const validateForm = () => {
     if (!nome || !email || !telefone || !necessidadeEspecial || !senha) {
@@ -78,7 +76,7 @@ const Cadastro: React.FC = () => {
         [
           {
             text: 'OK',
-            onPress: () => navigation.navigate('Login'),
+            onPress: () => router.replace('/login/Login')
           },
         ]
       );
@@ -106,6 +104,7 @@ const Cadastro: React.FC = () => {
         <TextInput
           style={styles.input}
           placeholder="Ex: João da Silva"
+          placeholderTextColor="#999"
           value={nome}
           onChangeText={setNome}
           editable={!loading}
@@ -115,6 +114,7 @@ const Cadastro: React.FC = () => {
         <TextInput
           style={styles.input}
           placeholder="Ex: joao.silva@gmail.com"
+          placeholderTextColor="#999"
           keyboardType="email-address"
           value={email}
           onChangeText={setEmail}
@@ -125,6 +125,7 @@ const Cadastro: React.FC = () => {
         <TextInput
           style={styles.input}
           placeholder="Ex: joao.silva@gmail.com"
+          placeholderTextColor="#999"
           keyboardType="email-address"
           value={confirmarEmail}
           onChangeText={setConfirmarEmail}
@@ -135,6 +136,7 @@ const Cadastro: React.FC = () => {
         <TextInput
           style={styles.input}
           placeholder="11 99999 9999"
+          placeholderTextColor="#999"
           keyboardType="phone-pad"
           value={telefone}
           onChangeText={setTelefone}
@@ -148,9 +150,9 @@ const Cadastro: React.FC = () => {
             onValueChange={(itemValue) => setNecessidadeEspecial(itemValue)}
             enabled={!loading}
           >
-            <Picker.Item label="Selecione" value="" />
-            <Picker.Item label="Sim" value="sim" />
-            <Picker.Item label="Não" value="nao" />
+            <Picker.Item label="Selecione" value="" color="#333" />
+            <Picker.Item label="Sim" value="sim" color="#333"/>
+            <Picker.Item label="Não" value="nao" color="#333"/>
           </Picker>
         </View>
 
@@ -164,9 +166,9 @@ const Cadastro: React.FC = () => {
                 enabled={!loading}
               >
                 <Picker.Item label="Selecione" value="" />
-                <Picker.Item label="Deficiência Visual" value="visual" />
-                <Picker.Item label="Deficiência Auditiva" value="auditiva" />
-                <Picker.Item label="Mobilidade Reduzida" value="mobilidade" />
+                <Picker.Item label="Deficiência Visual" value="visual" color="#333"/>
+                <Picker.Item label="Deficiência Auditiva" value="auditiva" color="#333"/>
+                <Picker.Item label="Mobilidade Reduzida" value="mobilidade" color="#333"/>
               </Picker>
             </View>
 
@@ -177,9 +179,9 @@ const Cadastro: React.FC = () => {
                 onValueChange={(itemValue) => setAtendimentoEstacao(itemValue)}
                 enabled={!loading}
               >
-                <Picker.Item label="Selecione" value="" />
-                <Picker.Item label="Sim" value="sim" />
-                <Picker.Item label="Não" value="nao" />
+                <Picker.Item label="Selecione" value="" color="#333"/>
+                <Picker.Item label="Sim" value="sim" color="#333"/>
+                <Picker.Item label="Não" value="nao" color="#333"/>
               </Picker>
             </View>
           </>
@@ -189,6 +191,7 @@ const Cadastro: React.FC = () => {
         <TextInput
           style={styles.input}
           placeholder="Crie uma senha"
+          placeholderTextColor="#999"
           secureTextEntry
           value={senha}
           onChangeText={setSenha}
@@ -199,6 +202,7 @@ const Cadastro: React.FC = () => {
         <TextInput
           style={styles.input}
           placeholder="Repita a senha"
+          placeholderTextColor="#999"
           secureTextEntry
           value={confirmarSenha}
           onChangeText={setConfirmarSenha}
@@ -219,7 +223,7 @@ const Cadastro: React.FC = () => {
 
         <TouchableOpacity 
           style={styles.loginLink} 
-          onPress={() => navigation.navigate('Login')}
+          onPress={() => router.replace('/login/Login')}
           disabled={loading}
         >
           <Text>Já possui cadastro? <Text style={styles.loginText}>Entrar</Text></Text>

@@ -6,6 +6,8 @@ export const routes = {
     termos: '/institucional/termos-de-uso',
     missaoValores: '/institucional/missao-valores',
     perfil: '/login/Perfil',
-    status: '/Estacoes/statusStation',
+    status: '/(tabs)/statusStation',
     search: '/Estacoes/search',
+    sos: '/(tabs)/sos',
+    map: '/(tabs)/map',
 } as const;
