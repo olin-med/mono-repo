@@ -54,17 +54,17 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="sos" 
-        options={{
-          title: 'Sos',
-          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="user" color={color} />,
-        }}
-      />
-      <Tabs.Screen
         name="statusStation" // Alert 
         options={{
           title: 'Status da Estação',
           tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="user" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="sos" 
+        options={{
+          title: 'Sos',
+          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="bell" color={color} />,
         }}
       />
     </Tabs>
