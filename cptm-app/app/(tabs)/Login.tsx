@@ -39,6 +39,8 @@ const LoginScreen = () => {
       // Store the token
       await AsyncStorage.setItem('@auth_token', response.access_token);
       console.log('Login successful, token stored');
+
+      console.log('Token:', response.access_token);
       
       // Navigate to the main app
       router.push('/login/AuthScreen');
