@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, ScrollView, Text, ActivityIndicator } from 'react-native';
 import Constants from 'expo-constants';
-import TransportGroup from '../../components/Estacoes/TransportGroup'; // Usa tu alias o ajusta el path
+import TransportGroup from '@/components/Estacoes/TransportGroup'; // Usa tu alias o ajusta el path
 
 // ✅ Lee la variable desde extra (definida en app.config.js)
-const API_URL = Constants.expoConfig?.extra?.transportApiUrl;
+// const API_URL = Constants.expoConfig?.extra?.transportApiUrl;
+const API_URL = "http://52.2.242.221:8021"
 
 type Line = {
   id: string;

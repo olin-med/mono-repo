@@ -6,6 +6,7 @@ import { ImagePickerComponent } from '@/components/Ocorrencia/imagePicker';
 import { SubmitButton } from '@/components/Ocorrencia/submitButton';
 import { PopupSuccess } from '@/components/Ocorrencia/popup';
 import { OcorrenciaFormData } from '@/types/ocorrencia';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function sos ()  {
   const [formData, setFormData] = useState<OcorrenciaFormData>({
@@ -28,7 +29,7 @@ export default function sos ()  {
   const isFormValid = formData.motivo && formData.estacao;
 
   return (
-    <>
+    <SafeAreaView style={{ backgroundColor: "#FFFFFF" }}>
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.title}>Registrar Ocorrência</Text>
 
@@ -70,7 +71,7 @@ export default function sos ()  {
         visible={showPopup}
         onClose={handleClosePopup}
       />
-    </>
+    </SafeAreaView>
   );
 };
 
