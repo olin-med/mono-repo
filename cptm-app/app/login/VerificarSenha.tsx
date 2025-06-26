@@ -7,13 +7,18 @@ import {
   StyleSheet,
   Image,
   SafeAreaView,
+  Alert,
+  ActivityIndicator,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useLocalSearchParams, router } from 'expo-router';
+import { authService } from '@/services/api';
 
 const VerificarCodigo: React.FC = () => {
-  const navigation = useNavigation();
-
+  const { email } = useLocalSearchParams<{ email: string }>();
   const [code, setCode] = useState(['', '', '', '', '', '']);
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const [timer, setTimer] = useState(34);
   const inputs = useRef<TextInput[]>([]);
 
@@ -36,8 +41,45 @@ const VerificarCodigo: React.FC = () => {
     }
   };
 
-  const handleVerificar = () => {
-    console.log('Código verificado:', code.join(''));
+  const handleVerificar = async () => {
+    const otp = code.join('');
+
+    if (otp.length !== 6) {
+      Alert.alert('Erro', 'Por favor, insira o código completo.');
+      return;
+    }
+
+    if (!newPassword || !confirmPassword) {
+      Alert.alert('Erro', 'Preencha todos os campos de senha.');
+      return;
+    }
+
+    if (newPassword !== confirmPassword) {
+      Alert.alert('Erro', 'As senhas não coincidem.');
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      await authService.resetPassword({
+        email,
+        otp,
+        new_password: newPassword,
+      });
+
+      Alert.alert('Sucesso', 'Senha redefinida com sucesso!', [
+        {
+          text: 'OK',
+          onPress: () => router.replace('/login'),
+        },
+      ]);
+    } catch (error) {
+      console.error('Erro ao resetar senha:', error);
+      Alert.alert('Erro', 'Código inválido ou senha inválida.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -50,8 +92,8 @@ const VerificarCodigo: React.FC = () => {
       <View style={styles.container}>
         <Text style={styles.title}>Código Enviado</Text>
         <Text style={styles.description}>
-          Por favor, insira o código de 6 números enviado para o e-mail {' '}
-          <Text style={styles.email}>ia********ad@gmail.com</Text> para resetar sua senha.
+          Por favor, insira o código enviado para o e-mail{' '}
+          <Text style={styles.email}>{email}</Text>
         </Text>
 
         <View style={styles.codeContainer}>
@@ -68,15 +110,34 @@ const VerificarCodigo: React.FC = () => {
           ))}
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={handleVerificar}>
-          <Text style={styles.buttonText}>Verificar ➔</Text>
-        </TouchableOpacity>
+        <Text style={styles.label}>Nova Senha:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Digite a nova senha"
+          secureTextEntry
+          value={newPassword}
+          onChangeText={setNewPassword}
+        />
 
-        <TouchableOpacity>
-          <Text style={styles.resendText}>
-            Não recebeu o código?{'\n'}
-            <Text style={styles.boldText}>Reenviando novamente</Text>
-          </Text>
+        <Text style={styles.label}>Confirmar Nova Senha:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Confirme a nova senha"
+          secureTextEntry
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
+        />
+
+        <TouchableOpacity
+          style={[styles.button, loading && styles.buttonDisabled]}
+          onPress={handleVerificar}
+          disabled={loading}
+        >
+          {loading ? (
+            <ActivityIndicator color="#fff" />
+          ) : (
+            <Text style={styles.buttonText}>Verificar e Redefinir ➔</Text>
+          )}
         </TouchableOpacity>
 
         <Text style={styles.timerText}>Pedir novo código em {timer}s</Text>
@@ -86,94 +147,3 @@ const VerificarCodigo: React.FC = () => {
 };
 
 export default VerificarCodigo;
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  header: {
-    backgroundColor: '#D50000',
-    paddingTop: 60,
-    paddingBottom: 30,
-    alignItems: 'center',
-    position: 'relative',
-  },
-  logo: {
-    width: 60,
-    height: 60,
-    resizeMode: 'contain',
-  },
-  wave: {
-    position: 'absolute',
-    bottom: -20,
-    width: '100%',
-    height: 40,
-    backgroundColor: '#fff',
-    borderTopLeftRadius: 100,
-    borderTopRightRadius: 100,
-  },
-  container: {
-    paddingHorizontal: 24,
-    paddingTop: 40,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#333',
-    marginBottom: 12,
-  },
-  description: {
-    fontSize: 14,
-    color: '#333',
-    textAlign: 'center',
-    marginBottom: 20,
-    lineHeight: 20,
-  },
-  email: {
-    fontWeight: 'bold',
-    color: '#D50000',
-  },
-  codeContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 28,
-  },
-  codeInput: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    width: 45,
-    height: 55,
-    textAlign: 'center',
-    fontSize: 18,
-    backgroundColor: '#F2F2F2',
-  },
-  button: {
-    backgroundColor: '#D50000',
-    paddingVertical: 14,
-    borderRadius: 8,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: '600',
-    fontSize: 16,
-  },
-  resendText: {
-    marginTop: 20,
-    textAlign: 'center',
-    fontSize: 13,
-    color: '#333',
-  },
-  boldText: {
-    fontWeight: 'bold',
-  },
-  timerText: {
-    textAlign: 'center',
-    marginTop: 8,
-    color: '#999',
-    fontSize: 12,
-  },
-});

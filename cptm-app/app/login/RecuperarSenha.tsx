@@ -7,13 +7,39 @@ import {
   StyleSheet,
   SafeAreaView,
   Image,
+  Alert,
+  ActivityIndicator,
 } from 'react-native';
+import { router } from 'expo-router';
+import { authService } from '@/services/api';
 
 const RecuperarSenha: React.FC = () => {
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleEnviarCodigo = () => {
-    console.log('Código de recuperação enviado para:', email);
+  const handleEnviarCodigo = async () => {
+    if (!email) {
+      Alert.alert('Erro', 'Por favor, insira o email.');
+      return;
+    }
+
+    try {
+      setLoading(true);
+      await authService.requestPasswordRecovery({ email });
+
+      Alert.alert('Sucesso', 'Código de recuperação enviado para o email.');
+
+      // Redirect to VerificarSenha, passing the email (use useLocalSearchParams on the target screen)
+      router.push({
+        pathname: '/login/VerificarSenha',
+        params: { email },
+      });
+    } catch (error) {
+      console.error('Erro ao enviar código de recuperação:', error);
+      Alert.alert('Erro', 'Não foi possível enviar o código. Verifique o email e tente novamente.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -34,10 +60,17 @@ const RecuperarSenha: React.FC = () => {
           value={email}
           onChangeText={setEmail}
           placeholderTextColor="#999"
+          editable={!loading}
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleEnviarCodigo}>
-          <Text style={styles.buttonText}>Enviar código ➔</Text>
+        <TouchableOpacity
+          style={[styles.button, loading && styles.buttonDisabled]}
+          onPress={handleEnviarCodigo}
+          disabled={loading}
+        >
+          <Text style={styles.buttonText}>
+            {loading ? 'Enviando...' : 'Enviar código ➔'}
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -101,6 +134,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     marginTop: 25,
+  },
+  buttonDisabled: {
+    opacity: 0.7,
   },
   buttonText: {
     color: '#fff',

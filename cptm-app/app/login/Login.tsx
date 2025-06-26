@@ -9,19 +9,13 @@ import {
   Image,
   ScrollView,
   Alert,
-  ActivityIndicator
+  ActivityIndicator,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { authService } from '../../services/api';
-import { router } from 'expo-router';
-import { RootStackParamList } from '../App';
-
-type LoginScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
+import { router } from 'expo-router';          // ← the only nav helper you need
 
 const LoginScreen = () => {
-  const navigation = useNavigation<LoginScreenNavigationProp>();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -34,22 +28,17 @@ const LoginScreen = () => {
 
     try {
       setLoading(true);
-      const response = await authService.login({ email, password });
-      
-      // Store the token
-      await AsyncStorage.setItem('@auth_token', response.access_token);
-      console.log('Login successful, token stored');
 
-      const token = await AsyncStorage.getItem('@auth_token');
-      console.log('Token from storage:', token);
-      
-      // Navigate to the main app
-      router.push('/menu');
-    } catch (error) {
-      console.error('Login error:', error);
+      const { access_token } = await authService.login({ email, password });
+      await AsyncStorage.setItem('@auth_token', access_token);
+
+      // move to the main area of the app
+      router.replace('/menu');                // use replace so user can’t go “back” to login
+    } catch (err) {
+      console.error('Login error:', err);
       Alert.alert(
         'Erro',
-        'Não foi possível fazer login. Verifique suas credenciais e tente novamente.'
+        'Não foi possível fazer login. Verifique suas credenciais e tente novamente.',
       );
     } finally {
       setLoading(false);
@@ -59,10 +48,7 @@ const LoginScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.header}>
-        <Image
-          source={require('@/assets/images/logo.png')}
-          style={styles.logo}
-        />
+        <Image source={require('@/assets/images/logo.png')} style={styles.logo} />
         <View style={styles.wave} />
       </View>
 
@@ -74,6 +60,7 @@ const LoginScreen = () => {
           style={styles.input}
           placeholder="Insira o seu email"
           keyboardType="email-address"
+          placeholderTextColor="#999"
           value={email}
           onChangeText={setEmail}
           editable={!loading}
@@ -83,21 +70,22 @@ const LoginScreen = () => {
         <TextInput
           style={styles.input}
           placeholder="Insira a senha"
+          placeholderTextColor="#999"
           secureTextEntry
           value={password}
           onChangeText={setPassword}
           editable={!loading}
         />
 
-        <TouchableOpacity 
+        <TouchableOpacity
           onPress={() => router.push('/login/RecuperarSenha')}
           disabled={loading}
         >
           <Text style={styles.linkText}>Esqueci minha senha</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={[styles.button, loading && styles.buttonDisabled]} 
+        <TouchableOpacity
+          style={[styles.button, loading && styles.buttonDisabled]}
           onPress={handleLogin}
           disabled={loading}
         >
@@ -110,7 +98,7 @@ const LoginScreen = () => {
 
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>Não possui cadastro?</Text>
-          <TouchableOpacity 
+          <TouchableOpacity
             onPress={() => router.push('/login/Cadastro')}
             disabled={loading}
           >
