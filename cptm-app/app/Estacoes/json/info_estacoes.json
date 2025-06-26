@@ -1,0 +1,14 @@
+{
+    "linha": {
+      "nome": "13 - Jade",
+      "cor": "#00B050",
+      "horario": "Segunda - Domingo | 04:00 - 23h59",
+      "estacoes": [
+        "ENG GOULART",
+        "GUARULHOS - CECAP",
+        "AEROPORTO - GUARULHOS",
+        "AEROPORTO"
+      ]
+    }
+  }
+  

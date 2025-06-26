@@ -38,7 +38,10 @@ export default function Menu() {
         <Text style={styles.title}>O que você procura?</Text>
 
         <Text style={styles.section}>Navegação</Text>
-        <MenuItem label="Linhas e estações" route="home">
+        <MenuItem label="Linhas" route="status">
+          <FontAwesome5 name="train" size={24} style={styles.icon} />
+        </MenuItem>
+        <MenuItem label="Estações" route="search">
           <FontAwesome5 name="train" size={24} style={styles.icon} />
         </MenuItem>
         <MenuItem label="Rotas" route="menu">
