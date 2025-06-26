@@ -35,11 +35,19 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
+          href:null,
           tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="bars" color={color} />,
         }}
       />
       <Tabs.Screen
         name="menu"
+        options={{
+          title: 'Menu',
+          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="bars" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="file"
         options={{
           title: 'Menu',
           tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="train-subway" color={color} />,
@@ -48,15 +56,15 @@ export default function TabLayout() {
       <Tabs.Screen
         name="map"
         options={{
-          title: 'map',
+          title: 'Mapa',
           tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="map-location-dot" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="login"
+        name="sos" // Alert 
         options={{
-          title: 'LoginScreen',
-          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="map-location-dot" color={color} />,
+          title: 'Sos',
+          tabBarIcon: ({ color }) => <FontAwesome6 size={28} name="siren" color={color} />,
         }}
       />
     </Tabs>
