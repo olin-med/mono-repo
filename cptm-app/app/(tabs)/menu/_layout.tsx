@@ -23,22 +23,16 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack screenOptions={{
-        headerTitle: () => (
-          <Image
-            source={require('@/assets/images/logo.png')} // use .png ou .jpg aqui
-            style={{ width: 32, height: 32, resizeMode: 'contain' }}
-          />
-        ),
-        headerTitleAlign: 'center',
-        headerStyle: { backgroundColor: '#E2001A' },
+        headerTitleAlign: 'left',
+        headerStyle: { backgroundColor: '#E2001A'},
         headerTintColor: 'white',
         headerTitleStyle: { fontWeight: 'bold', color: '#fff' },
         contentStyle: { backgroundColor: '#F9F9F9' },
       }}>
-        <Stack.Screen name="faleConosco" options={{ title: "Menu" }} />
-        <Stack.Screen name="missaoValores" options={{ title: "Autenticação" }} />
-        <Stack.Screen name="tarifas" options={{ title: "Autenticação" }} />
-        <Stack.Screen name="termosdeuso" options={{ title: "Autenticação" }} />
+        <Stack.Screen name="faleConosco" options={{ title: "Fale Conosco" }} />
+        <Stack.Screen name="missaoValores" options={{ title: "Missão e Valores" }} />
+        <Stack.Screen name="tarifas" options={{ title: "Tarifas" }} />
+        <Stack.Screen name="termosdeuso" options={{ title: "Termos de uso" }} />
         <Stack.Screen name="index" options={{ title: "Menu" }} />
         <Stack.Screen name="atendimentoPcd" options={{ title: "Acessibilidade" }} />
         <Stack.Screen name="+not-found" />
