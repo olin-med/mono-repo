@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 import { Image } from 'react-native';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import CustomHeader from '@/components/ui/CustomHeader';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -23,18 +24,7 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       {/* ✅ Este é o Stack principal que controla TODA a navegação e o header global */}
        <Stack screenOptions={{
-        // Define o estilo do header global aqui
-        headerStyle: { backgroundColor: '#E2001A' },
-        headerTintColor: 'white',
-        headerTitleAlign: 'center',
-        animation: 'slide_from_right',
-        // O título é uma imagem por padrão
-        headerTitle: () => (
-          <Image
-            source={require('@/assets/images/logo.png')}
-            style={{ width: 32, height: 32, resizeMode: 'contain' }}
-          />
-        ),
+          header: () => <CustomHeader />,
       }}>
         {/* A rota (tabs) usará o header definido acima.
             O botão de voltar não aparecerá aqui porque é a primeira tela do stack. */}
@@ -42,12 +32,6 @@ export default function RootLayout() {
           name="(tabs)"
           options={{
             // Escondemos o título de texto para mostrar apenas a logo
-            headerTitle: () => (
-              <Image
-                source={require('@/assets/images/logo.png')}
-                style={{ width: 32, height: 32, resizeMode: 'contain' }}
-              />
-            ),
           }}
         />
 
@@ -58,6 +42,29 @@ export default function RootLayout() {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="login/Cadastro"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="login/NovaSenha"
+          options={{
+            headerShown: false,
+          }}
+        />  
+        <Stack.Screen
+          name="login/AuthScreen"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="login/Perfil"
+          options={{
+            headerShown: true,
+          }}/>
 
         <Stack.Screen name="+not-found" />
       </Stack>
