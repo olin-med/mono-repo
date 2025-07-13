@@ -3,31 +3,11 @@ import { View, Text, StyleSheet, TouchableOpacity, Alert, ActivityIndicator } fr
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { router } from 'expo-router';
 import { authService, User } from '@/services/api';
+import { useGetUser } from '@/hooks/useGetUser';
+import { goBack } from 'expo-router/build/global-state/routing';
 
 export default function ProfileScreen() {
-  const [user, setUser] = useState< User | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const getUserInfo = async () => {
-      try {
-        const token = await AsyncStorage.getItem('@auth_token');
-        if (token === null) {
-          Alert.alert('Erro', 'Usuário não autenticado');
-          setLoading(false);
-          return;
-        }
-        const userData = await authService.getCurrentUser();
-        setUser(userData);
-      } catch (error) {
-        console.error(error);
-        Alert.alert('Erro', 'Não foi possível carregar o perfil.');
-      } finally {
-        setLoading(false);
-      }
-    };
-    getUserInfo();
-  }, []);
+  const { user, loading, error } = useGetUser();
 
   const handleLogout = async () => {
     Alert.alert('Sair', 'Tem certeza que deseja sair?', [
@@ -52,6 +32,19 @@ export default function ProfileScreen() {
         <ActivityIndicator size="large" color="#E30613" />
       </View>
     );
+  }
+  
+  if (error){
+    return (
+      //Alert with error
+      Alert.alert("Erro", error, [
+        {
+          text: 'Voltar',
+          style: 'cancel',
+          onPress: () => router.replace('/(tabs)/menu')
+        }
+      ])
+    )
   }
 
   return (
